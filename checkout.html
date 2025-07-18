@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout - Radiance</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to right, #fff, #f0f4f7);
+    }
+    .container {
+      max-width: 1100px;
+    }
+    .form-section, .summary-section {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    h2 {
+      font-weight: 600;
+    }
+    .form-label i {
+      margin-right: 8px;
+      color: #198754;
+    }
+    .btn-success {
+      padding: 10px 30px;
+      font-weight: 600;
+      border-radius: 25px;
+    }
+    #upiDetails {
+      display: none;
+      margin-top: 15px;
+    }
+    .summary-section {
+      position: sticky;
+      top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container mt-5 mb-5">
+  <h2 class="text-center mb-4">🛍️ Checkout</h2>
+  <div class="row g-4">
+
+    <!-- Billing & Payment -->
+    <div class="col-lg-7">
+      <div class="form-section">
+        <form id="checkoutForm">
+          <h5 class="mb-3">Billing Details</h5>
+          <div class="mb-3">
+            <label for="name" class="form-label"><i class="fa-solid fa-user"></i> Full Name</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label"><i class="fa-solid fa-envelope"></i> Email</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="address" class="form-label"><i class="fa-solid fa-location-dot"></i> Shipping Address</label>
+            <textarea class="form-control" id="address" rows="3" required></textarea>
+          </div>
+
+          <h5 class="mt-4 mb-3">Payment Method</h5>
+          <select class="form-select" id="paymentMethod" required>
+            <option value="" disabled selected>Select a payment method</option>
+            <option value="card">💳 Credit/Debit Card</option>
+            <option value="netbanking">🏦 Net Banking</option>
+            <option value="upi">📱 UPI (Google Pay, PhonePe)</option>
+            <option value="wallet">🧾 Wallets (Paytm, PhonePe)</option>
+            <option value="cod">💵 Cash on Delivery</option>
+          </select>
+
+          <div id="upiDetails">
+            <p class="mt-3 mb-1">Scan the QR or send payment to:</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" alt="UPI QR Code" width="180">
+            <p class="mt-2"><strong>UPI ID:</strong> radiance@upi</p>
+          </div>
+
+          <div class="text-end mt-4">
+            <button type="submit" class="btn btn-success">
+              <i class="fa-solid fa-check-circle me-1"></i> Place Order
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Order Summary -->
+    <div class="col-lg-5">
+      <div class="summary-section">
+        <h5 class="mb-3">🧾 Order Summary</h5>
+        <ul class="list-group" id="summaryList"></ul>
+        <div class="d-flex justify-content-between mt-3">
+          <strong>Total:</strong>
+          <strong id="totalAmount">₹0</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Spinner -->
+<div id="spinnerOverlay" class="d-none position-fixed top-0 start-0 w-100 h-100 bg-white bg-opacity-75 d-flex align-items-center justify-content-center" style="z-index: 9999;">
+  <div class="spinner-border text-success" role="status" style="width: 4rem; height: 4rem;">
+    <span class="visually-hidden">Processing...</span>
+  </div>
+</div>
+
+<!-- Login Required Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content shadow-lg border-0">
+      <div class="modal-body text-center p-4">
+        <i class="fa-solid fa-circle-exclamation fa-3x text-warning mb-3"></i>
+        <h5 class="fw-bold mb-2">Login Required</h5>
+        <p class="text-muted">Please log in to continue to checkout.</p>
+        <div class="mt-3">
+          <div class="spinner-border text-success" role="status"></div>
+          <p class="mt-2 small text-muted">Redirecting to login page...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // 🔒 Show modal if user not logged in
+  if (localStorage.getItem("isLoggedIn") !== "true") {
+    const modal = new bootstrap.Modal(document.getElementById("loginModal"));
+    modal.show();
+    setTimeout(() => {
+      window.location.href = "login.html";
+    }, 3000);
+  }
+
+  const paymentSelect = document.getElementById("paymentMethod");
+  const upiDetails = document.getElementById("upiDetails");
+
+  paymentSelect.addEventListener("change", () => {
+    upiDetails.style.display = paymentSelect.value === "upi" ? "block" : "none";
+  });
+
+  window.onload = function () {
+    const storedName = localStorage.getItem("billing_name");
+    const storedEmail = localStorage.getItem("billing_email");
+    const storedAddress = localStorage.getItem("billing_address");
+
+    if (storedName) document.getElementById("name").value = storedName;
+    if (storedEmail) document.getElementById("email").value = storedEmail;
+    if (storedAddress) document.getElementById("address").value = storedAddress;
+
+    loadOrderSummary();
+  };
+
+  document.getElementById("checkoutForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const address = document.getElementById("address").value.trim();
+    const payment = document.getElementById("paymentMethod").value;
+
+    if (!payment || !name || !email || !address) {
+      alert("⚠️ Please fill in all details and select a payment method.");
+      return;
+    }
+
+    localStorage.setItem("billing_name", name);
+    localStorage.setItem("billing_email", email);
+    localStorage.setItem("billing_address", address);
+
+    document.getElementById("spinnerOverlay").classList.remove("d-none");
+
+    setTimeout(() => {
+      if (payment === "card") {
+        window.location.href = "payment.html";
+      } else {
+        saveOrderToLocalStorage();
+        localStorage.removeItem("cart");
+        localStorage.removeItem("buyNowProduct");
+        window.location.href = "order-success.html";
+      }
+    }, 1500);
+  });
+
+  function loadOrderSummary() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const buyNowProduct = JSON.parse(localStorage.getItem("buyNowProduct"));
+    const list = document.getElementById("summaryList");
+    let total = 0;
+    list.innerHTML = "";
+
+    if (cart.length > 0) {
+      cart.forEach(item => {
+        const li = document.createElement("li");
+        li.className = "list-group-item d-flex justify-content-between align-items-center";
+        li.innerHTML = `${item.name} <span>₹${item.price}</span>`;
+        list.appendChild(li);
+        total += parseFloat(item.price);
+      });
+    } else if (buyNowProduct) {
+      const li = document.createElement("li");
+      li.className = "list-group-item d-flex justify-content-between align-items-center";
+      li.innerHTML = `${buyNowProduct.name} <span>₹${buyNowProduct.price}</span>`;
+      list.appendChild(li);
+      total += parseFloat(buyNowProduct.price);
+    } else {
+      list.innerHTML = '<li class="list-group-item">Your cart is empty.</li>';
+    }
+
+    document.getElementById("totalAmount").innerText = "₹" + total.toFixed(2);
+  }
+
+  function saveOrderToLocalStorage() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const buyNowProduct = JSON.parse(localStorage.getItem("buyNowProduct"));
+    const orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+    let items = cart.length > 0 ? cart : buyNowProduct ? [buyNowProduct] : [];
+
+    const newOrder = {
+      items: items,
+      total: items.reduce((acc, item) => acc + parseFloat(item.price), 0),
+      date: new Date().toLocaleString(),
+      billing: {
+        name: document.getElementById("name").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        address: document.getElementById("address").value.trim()
+      }
+    };
+
+    orders.push(newOrder);
+    localStorage.setItem("orders", JSON.stringify(orders));
+  }
+</script>
+</body>
+</html>

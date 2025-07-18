@@ -1,0 +1,136 @@
+/* Navbar Styles */
+.navbar-brand img {
+    width: 150px;
+    height: auto;
+}
+.navbar {
+    height: 100px;
+}
+
+/* Center Box for Product Page */
+.centerbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 1200px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Photo Section */
+.photo {
+    flex: 1;
+    margin-right: 30px;
+}
+
+.main-img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.thumbnails {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.thumbnail {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+    border-color: #5cb85c;
+}
+
+/* Details Section */
+.details {
+    flex: 1;
+}
+
+.details h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.details p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.details .rupee {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+.details .MRP {
+    font-size: 24px;
+    font-weight: bold;
+    color:gray;
+    text-decoration: line-through;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+.details .offer {
+    font-size: 24px;
+    font-weight: 190;
+    color:green;
+   
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+.details button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+.cost{
+    display: flex;
+    
+}
+.pincode{
+    padding-top: 50px;
+}
+.freeshipping{
+    padding-top: 40px;
+    padding-left: 190px;
+    padding-bottom: 40px;
+   
+display: flex;
+}
+.each{
+    
+    padding-left: 30px;
+    font-size: larger;
+    width: 350px;
+    
+}
+.tandc{
+    display: flex;
+    color: white;
+background-color: black;
+align-items: center;
+padding-left: 340px;
+padding-bottom: 40px;
+
+}
+.tc1{
+    padding-left: 100px;
+}

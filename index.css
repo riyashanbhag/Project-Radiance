@@ -1,0 +1,408 @@
+/* Navbar Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fffefc;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f9f9f9;
+}
+
+h2 {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  font-weight: 600;
+  color: #333;
+}
+
+.card-text {
+  color: #555;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  border: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+#total-price {
+  background-color: #fff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: right;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.navbar-nav .nav-link {
+    font-size: 18px;  /* Increased font size */
+    font-weight: 600; /* Bolder */
+    letter-spacing: 0.5px;
+    text-transform: uppercase; /* Optional for uniformity */
+}
+.dropdown-menu .dropdown-item {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#cart-items p {
+  font-size: 18px;
+  text-align: center;
+  color: #999;
+  margin-top: 40px;
+}
+
+.navbar-brand img {
+    width: 150px;
+    height: 80px;
+}
+.navbar-brand{
+    align-items:center ;
+    padding: 20px;
+}
+.nav-item{
+    padding: 10px;
+}
+#hero {
+     background-image: url(asian-beauty-cosmetic-skincare-model-white-background_1000823-119730.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+#hero h2 {
+    font-size: 3vw; /* Will scale based on viewport width */
+    color: black;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    display: inline-block;
+
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+   
+    white-space: nowrap; /* Keeps the content on a single line */
+    
+    display: inline-block; /* Prevents the container width from expanding */
+}
+@media (max-width: 768px) {
+    #hero h2 {
+        font-size: 24px;
+        white-space: normal;
+    }
+
+    #ShopNowBtn {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero {
+        min-height: 70vh;
+    }
+
+    #hero h2 {
+        font-size: 20px;
+    }
+}
+
+#ShopNowBtn{
+background-color: #000;
+    color: #fff;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+     background: linear-gradient(to right, #ff758c, #ff7eb3);
+    color: white;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(255, 118, 152, 0.3);
+}
+#ShopNowBtn:hover {
+    background-color: #ffffff;
+    color: #000;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+}
+.newArrivals {
+    font-style: normal;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: large;
+    text-align: center;
+}
+.newArrivals h2 {
+   font-size: 42px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to right, #ff758c, #ff7eb3); /* peach-pink blend */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 1px 1px 6px rgba(255, 120, 163, 0.4);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: fadeIn 2s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* General styles for all items */
+.items {
+   display: flex;
+    flex-wrap: wrap; /* allows wrapping on small screens */
+    justify-content: flex-start;
+    gap: 0px; /* remove horizontal spacing */
+    padding: 0;
+    margin: 0 auto;
+    row-gap: 30px; /* optional vertical space between rows */
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
+    
+}
+
+.item {
+     margin-right: 0; /* remove any right margins */
+    margin-left: 0;
+    width: 200px; /* fixed width */
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+}
+.item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    border: 1px solid #ffc1cc;
+}
+
+.item img {
+    width: 100%; /* Ensures image fills the item container */
+    height: auto; /* Maintains aspect ratio */
+    margin-bottom: 10px; /* Space between image and text */
+}
+
+.item a {
+    text-decoration: none; /* Removes underline from links */
+    color: black; /* Sets text color */
+    font-size: 14px; /* Adjust font size for readability */
+    line-height: 1.5; /* Adds spacing between lines */
+}
+.nav-link {
+    color: #333 !important;
+    transition: all 0.3s ease-in-out;
+}
+.nav-link:hover {
+    color: #ff6a95 !important;
+    font-weight: 600;
+    text-decoration: underline;
+}
+.rupee {
+    font-weight: bold;
+    color: #d63384;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.MRP {
+    color: grey;
+    text-decoration: line-through;
+     color: #888;
+    font-size: 14px;
+    margin-left: 4px;
+    text-decoration: line-through;
+}
+
+.discount {
+    color: green;
+     color: #28a745;
+    font-size: 14px;
+    margin-left: 4px;
+}
+
+.offer img {
+    width: 1500px;
+    height: 400px;
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.freeshipping {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+    background-color: #fefefe;
+    text-align: center;
+}
+
+.each {
+    flex: 1 1 250px;
+    max-width: 300px;
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+}
+.each i {
+    font-size: 24px;
+    color: #ff6a95;
+    margin-bottom: 10px;
+    display: block;
+}
+@media (max-width: 576px) {
+    .each {
+        font-size: 16px;
+    }
+}
+
+.tandc {
+     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #111;
+    color: #f1f1f1;
+    padding: 30px 20px; /* Add horizontal padding */
+    text-align: center;
+    gap: 20px;
+}
+
+.tc1 {
+     margin: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    flex: 1 1 150px; /* Allows flexible width with min size */
+}
+.tc1:hover {
+   text-decoration: underline;
+    color: #ff85a2;
+}
+
+.copyright {
+    font-size: 14px;
+    background-color: #111;
+    color: #bbb;
+    padding-bottom: 20px;
+}
+.item {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+@media (max-width: 600px) {
+    .tc1 {
+        font-size: 14px;
+        margin: 5px 10px;
+        flex: 1 1 100%;
+    }
+
+    .tandc {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
+    }
+}
+.search-section {
+  text-align: center;
+  margin: 20px;
+}
+
+#search-input {
+  padding: 8px;
+  width: 200px;
+}
+
+#search-btn {
+  padding: 8px 12px;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.product-card {
+  width: 200px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+}
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: center;
+}
+.product-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  max-width: 200px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Results - Radiance Skincare</title>
+  <link rel="stylesheet" href="index.css">
+   <link rel="stylesheet" href="search.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">
+      <img src="RADIANCE-removebg-preview.png" alt="logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link" href="About.html">About</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categories
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="womenHtml.html">WOMEN</a></li>
+            
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="cart.html"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+        </li>
+
+        
+
+      </ul>
+
+  <!-- ✅ Search form (insert this inside navbar) -->
+<form class="d-flex me-3" role="search" id="search-form">
+  <input class="form-control me-2" type="search" id="search-input" placeholder="Search products" aria-label="Search">
+  <button class="btn btn-outline-dark" type="button" id="search-btn">Search</button>
+</form>
+
+
+      <!-- ✅ Corrected Login/Register button -->
+      <span id="loginBtn">
+  <a href="login.html" class="btn btn-outline-success ms-2">Login/Register</a>
+</span>
+
+
+    </div>
+  </div>
+</nav>
+ 
+
+  
+
+  
+
+  <div id="products-container">
+   
+    <!-- Product 1 -->
+    
+      <div class="product-card item text-center">
+        <a href="product.html?id=lakme"><img src="lakme primer.jpg" class="img-fluid" alt="Lakme Primer"></a>
+        <a href="product.html?id=lakme">Lakme Unreal Mini Blurfect Face Primer<br>
+        <span class="rupee">&#8377; 276</span> <span class="MRP">&#8377;325</span><span class="discount"> 15% off</span></a>
+      </div>
+  
+    
+      <div class="product-card item text-center">
+        <a href="product.html?id=ikonic"><img src="ikonic hair straightner.jpg" class="img-fluid" alt="Ikonic Hair Straightener"></a>
+        <a href="product.html?id=ikonic">Ikonic Hair Straightener<br>
+        <span class="rupee">&#8377; 1836</span> <span class="MRP">&#8377;2550</span><span class="discount"> 28% off</span></a>
+      </div>
+
+   
+      <div class="product-card item text-center">
+        <a href="product.html?id=pilgrim"><img src="pilgrim serum.jpg" alt="pilgrim serum"></a>
+            <a href="product.html?id=pilgrim">Pilgrim Redensyl & Anagain Advanced Hair Growth Serum
+                (50ml) <br>
+                <span class="rupee">&#8377; 698</span> <span class="MRP">&#8377;895</span><span class="discount"> 22% off</span></a>
+   
+    </div>
+    
+      <div class="product-card item text-center">
+       <a href="product.html?id=floral"><img src="floral perfume.avif" alt="floral perfume"></a>
+            <a href="product.html?id=floral">Nykaa Love Struck Love Notes Long Lasting Floral Mini Travel Size Perfume for Women
+                (16ml) <br>
+                <span class="rupee">&#8377; 224</span> <span class="MRP">&#8377;249</span><span class="discount"> 10% off</span></a> 
+
+    </div>
+  
+      <div class=" product-card item text-center">
+        <a href="product.html?id=cetaphil"><img src="cetaphil moisturizer.webp" alt="cetaphil moisturizer"></a>
+            <a href="product.html?id=cetaphil">Cetaphil Moisturising Lotion For Dry To Normal Sensitive Skin - Dermatologist Recommended
+                (100ml) <br>
+                <span class="rupee">&#8377; 535</span> <span class="MRP">&#8377;575</span><span class="discount"> 7% off</span></a>
+      </div>
+
+   
+      <div class=" product-card item text-center">
+        <a href="product.html?id=moxie"><img src="moxiephoto2.webp" alt="moxie shampoo"></a>
+            <a href="product.html?id=moxie">Gentle Cleansing Shampoo, 200ml <br>
+                <span class="rupee">&#8377; 589</span> <span class="MRP">&#8377;625</span><span class="discount"> 6% off</span></a>
+      </div>
+  
+  
+      <div class=" product-card item text-center">
+         <a href="product.html?id=wella"><img src="wella shampoo.avif" alt="wella shampoo"></a>
+            <a href="product.html?id=wella">Wella Professionals INVIGO Nutri Enrich Deep Nourishing Shampoo
+                (250ml) <br>
+                <span class="rupee">&#8377; 675
+                </span> <span class="MRP">&#8377;750</span><span class="discount"> 28% off</span></a>
+      </div>
+  
+
+    <!-- Repeat structure for other products... -->
+    <!-- Example below -->
+
+    
+      <div class=" product-card item text-center">
+        <a href="product.html?id=huda"><img src="hudaLoosePowder.avif" alt="Huda Beauty Powder"></a>
+    <a href="product.html?id=huda">Huda Beauty Easy Bake Loose Powder - Banana Bread<br>
+        <span class="rupee">&#8377; 3250</span> <span class="MRP">&#8377;3500</span><span class="discount"> 7% off</span></a>
+     
+    </div>
+    
+      <div class=" product-card item text-center">
+        <a href="product.html?id=moisturizer"><img src="https://images.apollo247.in/pub/media/catalog/product/p/o/pon0264_2_2.jpg?tr=q-80,f-webp,w-400,dpr-3,c-at_max%201200w" alt="Pond's Moisturizer"></a>
+    <a href="product.html?id=moisturizer">Pond's Super Light Gel Oil-Free Moisturizer With Hyaluronic Acid & Vitamin E (147g)<br>
+        <span class="rupee">&#8377; 299</span> <span class="MRP">&#8377;349</span><span class="discount"> 14% off</span></a>
+     
+    </div>
+    
+      <div class=" product-card item text-center">
+         <a href="product.html?id=sunscreen"><img src="https://aqualogica.in/cdn/shop/files/Mono_fccd38dc-5661-4e6b-9d9b-4d200cb82bbd.jpg?v=1747844714&width=1445" alt="Aqualogica Sunscreen"></a>
+    <a href="product.html?id=sunscreen">Aqualogica Glow+ Dewy Sunscreen With SPF 50 & Vitamin C (50g)<br>
+        <span class="rupee">&#8377; 379</span> <span class="MRP">&#8377;499</span><span class="discount"> 24% off</span></a>
+      </div>
+    
+      <div class=" product-card item text-center">
+        <a href="product.html?id=facewash"><img src="https://assets.unileversolutions.com/v1/123498785.png" alt="Simple Facewash"></a>
+    <a href="product.html?id=facewash">Simple Kind To Skin Refreshing Facial Wash - No Harsh Chemicals (150ml)<br>
+        <span class="rupee">&#8377; 310</span> <span class="MRP">&#8377;365</span><span class="discount"> 15% off</span></a>
+      </div>
+
+      <div class="product-card item text-center">
+       <a href="product.html?id=toner"><img src="https://images-static.nykaa.com/media/catalog/product/1/8/18d33a4MINIM00000014_1509232.jpg?tr=w-500" alt="Minimalist Toner"></a>
+    <a href="product.html?id=toner">Minimalist PHA 3% Alcohol-Free Toner For Sensitive Skin (150ml)<br>
+        <span class="rupee">&#8377; 399</span> <span class="MRP">&#8377;499</span><span class="discount"> 20% off</span></a>
+      </div>
+      <div class="product-card item text-center">
+        <a href="product.html?id=sheetmask"><img src="https://m.media-amazon.com/images/I/61oNtGy63gL._UF1000,1000_QL80_.jpg" alt="Garnier Sheet Mask"></a>
+    <a href="product.html?id=sheetmask">Garnier Skin Naturals Hydra Bomb Sheet Mask - Pomegranate (32g)<br>
+        <span class="rupee">&#8377; 99</span> <span class="MRP">&#8377;120</span><span class="discount"> 18% off</span></a>
+      </div>
+
+      <div class="product-card item text-center">
+       <a href="product.html?id=doveIntenseShampoo"><img src="https://m.media-amazon.com/images/I/41+R2s1-FsL._UF1000,1000_QL80_.jpg" alt="Dove Shampoo"></a>
+    <a href="product.html?id=doveIntenseShampoo">Dove Intense Repair Shampoo with Keratin Actives (340ml)<br>
+        <span class="rupee">&#8377; 225</span> <span class="MRP">&#8377;270</span><span class="discount"> 17% off</span></a>
+      </div>
+    
+     
+      <div class="product-card item text-center">
+        <a href="product.html?id=sanfe"><img src="sanfe.avif" alt="floral perfume"></a>
+                <a href="product.html?id=sanfe">Sanfe Quick Slick Hair Finishing Stick
+                    (9ml)<br>
+                    <span class="rupee">&#8377; 249</span> <span class="MRP">&#8377;299</span><span class="discount"> 17% off</span></a>
+      </div>
+    
+
+    <!-- Add all your products in the same way under this <div class="row g-3"> -->
+  
+
+    <!-- Product 1 -->
+    
+      <div class="product-card item text-center">
+        <a href="product.html?id=loveplanet"><img src="loveandB.avif" alt="Ikonic Hair Straightener"></a>
+                <a href="product.html?id=loveplanet">Love Beauty & Planet Bye Bye Frizz Combo ( Shampoo + Mask)
+                    (2 pcs)<br>
+                    <span class="rupee">&#8377; 1106</span> <span class="MRP">&#8377;1310</span><span class="discount"> 16% off</span></a>
+      </div>
+      <div class="product-card item text-center">
+       <a href="product.html?id=loreal"><img src="lorealserum.avif" alt="pilgrim serum"></a>
+                <a href="product.html?id=loreal">L'Oreal Paris Extraordinary Oil Hair Serum, Anti-Frizz Serum With UV Protection
+                    (100ml) <br>
+                    <span class="rupee">&#8377; 519</span> <span class="MRP">&#8377;649
+                    </span><span class="discount"> 20% off</span></a>
+      </div>
+      <div class="product-card item text-center">
+      <a href="product.html?id=sanfe"><img src="sanfe.avif" alt="floral perfume"></a>
+                <a href="product.html?id=sanfe">Sanfe Quick Slick Hair Finishing Stick
+                    (9ml)<br>
+                    <span class="rupee">&#8377; 249</span> <span class="MRP">&#8377;299</span><span class="discount"> 17% off</span></a>
+      </div>
+      <div class="product-card item text-center">
+       <a href="product.html?id=plum"><img src="plumLotion.avif" alt="cetaphil moisturizer"></a>
+                <a href="product.html?id=plum">Plum BodyLovin Vanilla Caramello Body Lotion With Cocoa Butter & Vitamin B5
+                    (400ml)<br>
+                    <span class="rupee">&#8377; 380
+                    </span> <span class="MRP">&#8377;475</span><span class="discount"> 20% off</span></a>
+      </div>
+      <div class="product-card item text-center">
+        <a href="product.html?id=vaseline"><img src="vaselinMoisture.avif" alt="moxie shampoo"></a>
+                <a href="product.html?id=vaseline">Vaseline Gluta-Hya Flawless Glow Lotion Bright, Even Tone Skin Glutathione Infused Moisturizer
+                    (200ml) <br>
+                    <span class="rupee">&#8377; 325</span> <span class="MRP">&#8377;650</span><span class="discount"> 50% off</span></a>
+      </div>
+      <div class="product-card item text-center">
+         <a href="product.html?id=wella"><img src="wella shampoo.avif" alt="wella shampoo"></a>
+            <a href="product.html?id=wella">Wella Professionals INVIGO Nutri Enrich Deep Nourishing Shampoo
+                (250ml) <br>
+                <span class="rupee">&#8377; 675
+                </span> <span class="MRP">&#8377;750</span><span class="discount"> 28% off</span></a>
+      </div>
+
+    <!-- Repeat structure for other products... -->
+    <!-- Example below -->
+
+      <div class="product-card item text-center">
+          <a href="product.html?id=mac"><img src="mac cream.avif" alt="wella shampoo"></a>
+                <a href="product.html?id=mac">M.A.C Strobe Cream - Peachlite | Illuminating Moisturizer & Liquid Highlighter
+                    (50ml) <br>
+                    <span class="rupee">&#8377; 3360
+                    </span> <span class="MRP">&#8377;4200</span><span class="discount"> 20% off</span></a>
+
+      </div>
+    
+    <!-- Add all your products in the same way under this <div class="row g-3"> -->
+
+
+
+    <!-- Product 1 -->
+      <div class="product-card item text-center">
+        <a href="product.html?id=neutrogena"><img src="https://images-static.nykaa.com/media/catalog/product/8/8/886658d4891080614470_1a.jpg" alt="Product 301"></a><a href="product.html?id=neutrogena">Neutrogena Hydro Boost Water Gel<br><span class="rupee">₹849</span> <span class="MRP">₹999</span><span class="discount"> 15% off</span></a>
+    </div>
+      <div class="product-card item text-center">
+        <a href="product.html?id=maybelline"><img src="https://rukminim2.flixcart.com/image/704/1056/xif0q/foundation/x/e/r/30-0-fit-me-matte-poreless-liquid-foundation-with-pump-spf-22-original-imahckqhevcbywaj.jpeg?q=90&crop=false" alt="Product 302"></a><a href="product.html?id=maybelline">Maybelline Fit Me Foundation<br><span class="rupee">₹499</span> <span class="MRP">₹549</span><span class="discount"> 9% off</span></a>
+      </div>
+      <div class="product-card item text-center">
+        <a href="product.html?id=mamaearth"><img src="https://m.media-amazon.com/images/I/71Wbdf1ML-L.jpg" alt="Product 303"></a><a href="product.html?id=mamaearth">Mamaearth Ubtan Face Wash<br><span class="rupee">₹249</span> <span class="MRP">₹299</span><span class="discount"> 17% off</span></a>
+      </div>
+      <div class="product-card item text-center">
+      <a href="product.html?id=loreal"><img src="https://m.media-amazon.com/images/I/61GGg1vs3DL.jpg" alt="Product 304"></a><a href="product.html?id=loreal">L'Oreal Paris Hair Serum<br><span class="rupee">₹519</span> <span class="MRP">₹649</span><span class="discount"> 20% off</span></a>
+      </div>
+      <div class="product-card item text-center">
+        <a href="product.html?id=biotiqueLotion"><img src="https://m.media-amazon.com/images/I/71wUhQVqYmL._UF1000,1000_QL80_.jpg" alt="Product 305"></a><a href="product.html?id=biotiqueLotion">Biotique Morning Nectar Lotion<br><span class="rupee">₹189</span> <span class="MRP">₹220</span><span class="discount"> 14% off</span></a>
+      </div>
+      <div class="product-card item text-center">
+        <a href="product.html?id=plumToner"><img src="https://plumgoodness.com/cdn/shop/files/Green-Tea-Toner_150ml_Amazon_1001x1001_02.jpg?v=1737983369" alt="Product 306"></a><a href="product.html?id=plumToner">Plum Green Tea Toner<br><span class="rupee">₹390</span> <span class="MRP">₹450</span><span class="discount"> 13% off</span></a>
+      </div>
+         <div class="product-card item text-center">
+         <a href="product.html?id=wowFacewash"><img src="https://m.media-amazon.com/images/I/51uwuBYMHlL._UF1000,1000_QL80_.jpg" alt="Product 307"></a><a href="product.html?id=wowFacewash">Wow Vitamin C Face Wash<br><span class="rupee">₹320</span> <span class="MRP">₹399</span><span class="discount"> 20% off</span></a>
+      </div>
+         <div class="product-card item text-center">
+        <a href="product.html?id=nivea"><img src="https://m.media-amazon.com/images/I/51qu97DFTjL._UF1000,1000_QL80_.jpg" alt="Product 308"></a><a href="product.html?id=nivea">Nivea Soft Light Moisturizer<br><span class="rupee">₹150</span> <span class="MRP">₹185</span><span class="discount"> 19% off</span></a>
+      </div>
+  
+      <div class="product-card item text-center">
+        <a href="product.html?id=colorbar"><img src="https://images-static.nykaa.com/media/catalog/product/6/2/62ede9bCB_8904052458487_1.jpg" alt="Product 309"></a><a href="product.html?id=colorbar">Colorbar Velvet Matte Lipstick<br><span class="rupee">₹299</span> <span class="MRP">₹340</span><span class="discount"> 12% off</span></a>
+      </div>
+  
+      <div class="product-card item text-center">
+         <a href="product.html?id=garnier"><img src="https://m.media-amazon.com/images/I/41yAKxKqv4L._UF1000,1000_QL80_.jpg" alt="Product 310"></a><a href="product.html?id=garnier">Garnier Micellar Cleansing Water<br><span class="rupee">₹199</span> <span class="MRP">₹225</span><span class="discount"> 11% off</span></a>
+      </div>
+   
+      <div class="product-card item text-center">
+        <a href="product.html?id=momsco"><img src="https://m.media-amazon.com/images/I/61zzIX0JXdL._UF1000,1000_QL80_.jpg" alt="Product 311"></a><a href="product.html?id=momsco">The Moms Co. Face Cream<br><span class="rupee">₹375</span> <span class="MRP">₹449</span><span class="discount"> 17% off</span></a>
+      </div>
+   
+      <div class="product-card item text-center">
+      <a href="product.html?id=revlon"><img src="https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/4/7/47f56d2r_8902656400253_0.jpg" alt="Product 312"></a><a href="product.html?id=revlon">Revlon Touch & Glow Compact<br><span class="rupee">₹229</span> <span class="MRP">₹260</span><span class="discount"> 12% off</span></a>
+      </div>
+    
+      <div class="product-card item text-center">
+        <a href="product.html?id=faces"><img src="https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/8/2/825c61f8903380000689_1.jpg" alt="Product 313"></a><a href="product.html?id=faces">Faces Pro Matte Lip Crayon<br><span class="rupee">₹599</span> <span class="MRP">₹699</span><span class="discount"> 14% off</span></a>      </div>
+   
+      <div class="product-card item text-center">
+      <a href="product.html?id=nykaaNail"><img src="https://images-static.nykaa.com/media/catalog/product/6/f/6f680c58904245701970_4.jpg?tr=w-500" alt="Product 314"></a><a href="product.html?id=nykaaNail">Nykaa Matte Nail Enamel<br><span class="rupee">₹179</span> <span class="MRP">₹199</span><span class="discount"> 10% off</span></a>      </div>
+   
+      <div class="product-card item text-center">
+        <a href="product.html?id=bellavita"><img src="https://m.media-amazon.com/images/I/61Z0HyOvTfL.jpg" alt="Product 315"></a><a href="product.html?id=bellavita">Bella Vita Perfume Gift Set<br><span class="rupee">₹699</span> <span class="MRP">₹849</span><span class="discount"> 18% off</span></a>      </div>
+    
+      <div class="product-card item text-center">
+       <a href="product.html?id=eyeconic"><img src="https://assets.myntassets.com/w_412,q_60,dpr_2,fl_progressive/assets/images/4384531/2024/7/25/ed2bd3c9-a1c9-4a0a-a791-3c33c206bb611721897897198LakmeEyeconicMatteKajalPencilthatLasts24Hrs-ClassicBrown035g2.jpg" alt="Product 316"></a><a href="product.html?id=eyeconic">Lakme Eyeconic Kajal<br><span class="rupee">₹199</span> <span class="MRP">₹240</span><span class="discount"> 17% off</span></a>
+      </div>
+   
+      <div class="product-card item text-center">
+       <a href="product.html?id=himalaya"><img src="https://m.media-amazon.com/images/I/61szHmyNAPL.jpg" alt="Product 317"></a><a href="product.html?id=himalaya">Himalaya Purifying Neem Face Wash<br><span class="rupee">₹145</span> <span class="MRP">₹170</span><span class="discount"> 15% off</span></a>
+      </div>
+   
+      <div class="product-card item text-center">
+        <a href="product.html?id=vaselineCocoa"><img src="https://m.media-amazon.com/images/I/51r7G9tLfLL.jpg" alt="Product 318"></a><a href="product.html?id=vaselineCocoa">Vaseline Cocoa Glow Body Lotion<br><span class="rupee">₹275</span> <span class="MRP">₹325</span><span class="discount"> 15% off</span></a>
+      </div>
+   
+      <div class="product-card item text-center">
+       <a href="product.html?id=doveHairfallRescueShampoo"><img src="https://m.media-amazon.com/images/I/51c3ExivW0L._UF1000,1000_QL80_.jpg" alt="Product 319"></a><a href="product.html?id=doveHairfallRescueShampoo">Dove Hair Fall Rescue Shampoo<br><span class="rupee">₹210</span> <span class="MRP">₹250</span><span class="discount"> 16% off</span></a>
+      </div>
+  
+      <div class="product-card item text-center">
+        <a href="product.html?id=elle18"><img src="https://m.media-amazon.com/images/I/41pFD-KiShL._UF1000,1000_QL80_.jpg" alt="Product 320"></a><a href="product.html?id=elle18">Elle 18 Color Pop Lipstick<br><span class="rupee">₹120</span> <span class="MRP">₹150</span><span class="discount"> 20% off</span></a>
+      </div>
+    
+      <div class="product-card item text-center">
+        <a href="product.html?id=tresemme"><img src="https://m.media-amazon.com/images/I/51OraU3yvFL.jpg" alt="Product 321"></a><a href="product.html?id=tresemme">Tresemme Keratin Smooth Shampoo<br><span class="rupee">₹420</span> <span class="MRP">₹499</span><span class="discount"> 16% off</span></a>
+      </div>
+    
+      <div class="product-card item text-center">
+        <a href="product.html?id=pondsGel"><img src="https://ponds.in/cdn/shop/files/27234_S1-8901030702921_900x.jpg?v=1722920440" alt="Product 322"></a><a href="product.html?id=pondsGel">Pond's Super Light Gel<br><span class="rupee">₹299</span> <span class="MRP">₹349</span><span class="discount"> 14% off</span></a>      </div>
+   
+      <div class="product-card item text-center">
+        <a href="product.html?id=lakmeMousse"><img src="https://www.lakmeindia.com/cdn/shop/files/23038_H-8901030987823_1000x.jpg?v=1709726928" alt="Product 323"></a><a href="product.html?id=lakmeMousse">Lakme Absolute Skin Natural Mousse<br><span class="rupee">₹675</span> <span class="MRP">₹799</span><span class="discount"> 15% off</span></a>
+      </div>
+   
+      <div class="product-card item text-center">
+       <a href="product.html?id=minimalist"><img src="https://m.media-amazon.com/images/I/51fo5Cdx4YL._UF1000,1000_QL80_.jpg" alt="Product 324"></a><a href="product.html?id=minimalist">Minimalist Niacinamide Serum<br><span class="rupee">₹549</span> <span class="MRP">₹599</span><span class="discount"> 8% off</span></a>
+      </div>
+   
+      <div class="product-card item text-center">
+       <a href="product.html?id=dermaco"><img src="https://m.media-amazon.com/images/I/61r7v2ziqPL._UF1000,1000_QL80_.jpg" alt="Product 325"></a><a href="product.html?id=dermaco">The Derma Co. Sunscreen SPF 50<br><span class="rupee">₹499</span> <span class="MRP">₹599</span><span class="discount"> 17% off</span></a>      </div>
+   
+      <div class="product-card item text-center">
+        <a href="product.html?id=olay"><img src="https://m.media-amazon.com/images/I/616itGWD8YL.jpg" alt="Product 326"></a><a href="product.html?id=olay">Olay Total Effects 7 in One Day Cream<br><span class="rupee">₹799</span> <span class="MRP">₹899</span><span class="discount"> 11% off</span></a>
+      </div>
+  
+      <div class="product-card item text-center">
+       <a href="product.html?id=mcaffeine"><img src="https://www.mcaffeine.com/cdn/shop/files/1_17_a1ea5b2b-a470-44a8-9269-4214d663404a.jpg?v=1693898118&width=1445" alt="Product 327"></a><a href="product.html?id=mcaffeine">MCaffeine Coffee Face Mask<br><span class="rupee">₹475</span> <span class="MRP">₹599</span><span class="discount"> 21% off</span></a>
+      </div>
+   
+      <div class="product-card item text-center">
+        <a href="product.html?id=wowHairOil"><img src="https://m.media-amazon.com/images/I/61PXKNTZciL.jpg" alt="Product 328"></a><a href="product.html?id=wowHairOil">WOW Onion Black Seed Hair Oil<br><span class="rupee">599</span> <span class="MRP">699</span><span class="discount"> 14% off</span></a>
+      </div>
+   
+      <div class="product-card item text-center">
+        <a href="product.html?id=pilgrimFacewash"><img src="https://discoverpilgrim.com/cdn/shop/products/volcanic-lava-ash-face-wash-with-yugdugu-white-lotus-618329.jpg?v=1683285537" alt="Product 329"></a><a href="product.html?id=pilgrimFacewash">Pilgrim Volcanic Lava Ash Face Wash<br><span class="rupee">₹350</span> <span class="MRP">₹399</span><span class="discount"> 12% off</span></a>
+      </div>
+   
+      <div class="product-card item text-center">
+        <a href="product.html?id=goodvibes"><img src="https://www.goodvibesonly.in/cdn/shop/products/good-vibes-toner-rose-glow-200-ml-2_8_display_1624426270_e9225b72_e3688624-52f5-437e-8381-f25eaa2abc28_1080x.jpg?v=1652200121" alt="Product 330"></a><a href="product.html?id=goodvibes">Good Vibes Rose Hip Radiant Glow Face Serum<br><span class="rupee">₹215</span> <span class="MRP">₹299</span><span class="discount"> 28% off</span></a>      </div>
+    
+      <div class="product-card item text-center">
+       <a href="product.html?id=nykaaClay"><img src="https://m.media-amazon.com/images/I/61xtSeXGUrL._UF1000,1000_QL80_.jpg" alt="Product 331"></a><a href="product.html?id=nykaaClay">Nykaa Clay It Cool Face Mask<br><span class="rupee">₹599</span> <span class="MRP">₹699</span><span class="discount"> 14% off</span></a>
+      </div>
+   
+      <div class="product-card item text-center">
+       <a href="product.html?id=khadi"><img src="https://m.media-amazon.com/images/I/61T7dfArlkL._UF1000,1000_QL80_.jpg" alt="Product 332"></a><a href="product.html?id=khadi">Khadi Natural Herbal Hair Cleanser<br><span class="rupee">₹299</span> <span class="MRP">₹349</span><span class="discount"> 14% off</span></a>
+      </div>
+    
+      <div class="product-card item text-center">
+       <a href="product.html?id=mamaearthConditioner2"><img src="https://m.media-amazon.com/images/I/612GJgaUnoL.jpg" alt="Product 333"></a><a href="product.html?id=mamaearthConditioner2">Mamaearth Onion Conditioner<br><span class="rupee">₹349</span> <span class="MRP">₹399</span><span class="discount"> 13% off</span></a>      </div>
+  
+      <div class="product-card item text-center">
+        <a href="product.html?id=biotiqueFruitPack2"><img src="https://www.biotique.com/cdn/shop/files/8904352001789_188434f8-ada2-460e-a5dc-6e5adb4f236f.jpg?v=1738750070" alt="Product 334"></a><a href="product.html?id=biotiqueFruitPack2">Biotique Fruit Face Pack<br><span class="rupee">₹210</span> <span class="MRP">₹249</span><span class="discount"> 16% off</span></a>      </div>
+   
+      <div class="product-card item text-center">
+       <a href="product.html?id=plumBodyWash2"><img src="https://www.havin.in/cdn/shop/files/51NaWYFilWL.jpg?v=1712909107" alt="Product 335"></a><a href="product.html?id=plumBodyWash2">Plum BodyLovin' Body Wash<br><span class="rupee">₹275</span> <span class="MRP">₹325</span><span class="discount"> 15% off</span></a>
+      </div>
+   
+      
+    </div>
+    
+    <!-- Add all your products in the same way under this <div class="row g-3"> -->
+
+
+</div>
+<script src="script.js"></script>
+<script>
+    function getSearchQuery() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('query') || '';
+}
+
+function searchProducts(term) {
+  const lowerTerm = term.toLowerCase();
+  document.querySelectorAll('.product-card').forEach(card => {
+    const productName = card.textContent.toLowerCase();
+    card.style.display = productName.includes(lowerTerm) ? 'block' : 'none';
+  });
+}
+
+// Run when page loads
+window.addEventListener('DOMContentLoaded', () => {
+  const query = getSearchQuery();
+  if (query) {
+    searchProducts(query);
+  }
+});
+
+</script>
+<script>
+  function getSearchQuery() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('query') || '';
+  }
+
+  function searchProducts(term) {
+    const lowerTerm = term.toLowerCase();
+    document.querySelectorAll('.product-card').forEach(card => {
+      const text = card.textContent.toLowerCase();
+      card.style.display = text.includes(lowerTerm) ? 'block' : 'none';
+    });
+  }
+
+  // When the page loads, search using the query
+  window.addEventListener('DOMContentLoaded', () => {
+    const query = getSearchQuery();
+    document.getElementById('search-input').value = query;
+    searchProducts(query);
+  });
+
+  // When you search again
+  document.getElementById('search-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const input = document.getElementById('search-input').value.trim();
+    if (input !== '') {
+      window.location.href = `search.html?query=${encodeURIComponent(input)}`;
+    }
+  });
+</script>
+
+  <script src="products.js"></script>
+  <script>
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+// Get query from URL
+const params = new URLSearchParams(window.location.search);
+const searchTerm = params.get("query");
+
+// Call your existing function if there's a search term
+if (searchTerm) {
+  searchProducts(searchTerm);
+}
+
+    function displayResults(results) {
+      const container = document.getElementById('search-results');
+      if (results.length === 0) {
+        container.innerHTML = "<p>No products found.</p>";
+        return;
+      }
+      container.innerHTML = results.map(p => `
+        <div class="product-card">
+          <a href="product.html?id=${p.id}">
+            <img src="${p.image}" alt="${p.name}">
+            <h3>${p.name}</h3>
+            <p>₹${p.price}</p>
+          </a>
+        </div>
+      `).join('');
+    }
+
+    function runSearch(term) {
+      const lowerTerm = term.toLowerCase();
+      const results = Object.values(products).filter(p =>
+        p.name.toLowerCase().includes(lowerTerm)
+      );
+      displayResults(results);
+    }
+
+    // Initial search on page load
+    const initialQuery = getQueryParam('query');
+    if (initialQuery) {
+      document.getElementById('search-box').value = initialQuery;
+      runSearch(initialQuery);
+    }
+
+    // Allow search on this page too
+    document.getElementById('search-box').addEventListener('input', e => {
+      runSearch(e.target.value);
+    });
+    function getSearchQuery() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('query') || '';
+}
+
+function searchProducts(term) {
+  const lowerTerm = term.toLowerCase();
+  document.querySelectorAll('.product-card').forEach(card => {
+    const productName = card.textContent.toLowerCase();
+    card.style.display = productName.includes(lowerTerm) ? 'block' : 'none';
+  });
+}
+
+// Handle form submission
+document.getElementById('search-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const newQuery = document.getElementById('search-input').value.trim();
+  if (newQuery) {
+    window.location.href = `search.html?query=${encodeURIComponent(newQuery)}`;
+  }
+});
+
+// Run on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const query = getSearchQuery();
+  document.getElementById('search-input').value = query; // show query in input
+  searchProducts(query);
+});
+  </script>
+</body>
+
+</html>

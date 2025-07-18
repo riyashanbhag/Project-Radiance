@@ -1,0 +1,232 @@
+/* ===========================
+   Base Styles
+=========================== */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fffefc;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===========================
+   Navbar
+=========================== */
+.navbar {
+    height: auto;
+    padding: 10px 0;
+}
+
+.navbar-brand img {
+    width: 150px;
+    height: 80px;
+}
+
+.nav-item {
+    padding: 10px;
+}
+
+.nav-link {
+    color: #333 !important;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #ff6a95 !important;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* ===========================
+   New Arrivals Section
+=========================== */
+.newArrivals {
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.newArrivals h2 {
+    font-size: 42px;
+    font-weight: 700;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 1px 1px 6px rgba(255, 120, 163, 0.4);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===========================
+   Product Items Grid
+=========================== */
+.item {
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    border-color: #ffc1cc;
+}
+
+.item img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.item a {
+    display: block;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 5px;
+}
+
+/* Price Formatting */
+.rupee {
+    font-weight: 600;
+    color: #d63384;
+    font-size: 16px;
+}
+
+.MRP {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.discount {
+    color: #28a745;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+/* ===========================
+   Footer
+=========================== */
+.freeshipping {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.each {
+    font-size: 16px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.each i {
+    font-size: 20px;
+}
+
+.tandc {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #111;
+    color: #f1f1f1;
+    padding: 30px 10px;
+    gap: 30px;
+}
+
+.tc1 {
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.tc1:hover {
+    text-decoration: underline;
+    color: #ff85a2;
+}
+
+.copyright {
+    font-size: 14px;
+    background-color: #111;
+    color: #bbb;
+    text-align: center;
+    padding: 15px 0;
+}
+
+/* ===========================
+   Responsive Media Queries
+=========================== */
+@media (max-width: 1200px) {
+    .each {
+        width: 300px;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar-brand img {
+        width: 120px;
+        height: auto;
+    }
+    .item {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .newArrivals h2 {
+        font-size: 30px;
+    }
+
+    .freeshipping {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tandc {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .tc1 {
+        margin: 10px 0;
+    }
+
+    .item {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .each {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .item {
+        font-size: 13px;
+    }
+}
