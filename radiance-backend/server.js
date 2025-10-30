@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const mongoose = require("mongoose");
 const path = require('path');
@@ -8,13 +10,21 @@ const authRoutes = require('./routes/auth');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// ✅ Connect to MongoDB
-mongoose.connect("mongodb://127.0.0.1:27017/radianceDB")
+// ✅ Connect to MongoDB Atlas (with safety + logging)
+const mongoURI = process.env.MONGODB_URI || "mongodb+srv://Radiance:Radiance@radiance.aurvgzd.mongodb.net/?appName=Radiance";
+
+mongoose.connect(mongoURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
   .then(() => console.log("✅ Connected to MongoDB"))
-  .catch((err) => console.error("❌ MongoDB connection error:", err));
+  .catch(err => console.error("❌ MongoDB connection error:", err));
 
 // ✅ Middleware
-app.use(cors());
+app.use(cors({
+  origin: ['https://radiance-riya.netlify.app'],
+  credentials: true,
+}));
 app.use(express.json());
 
 // ✅ Serve static files
@@ -24,12 +34,12 @@ app.use(express.static(path.join(__dirname, '..')));
 app.use('/api/products', productRoutes);
 app.use('/api', authRoutes);
 
-// ✅ Fallback for SPA (Frontend routing support)
+// ✅ Fallback route (for single-page frontend)
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
 // ✅ Start server
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`🚀 Server running at http://localhost:${PORT}`);
 });
