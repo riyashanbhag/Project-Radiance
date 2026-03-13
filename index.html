@@ -369,24 +369,28 @@
 });
 
 
-  const user = sessionStorage.getItem("loggedInUser") || localStorage.getItem("loggedInUser");
+ const userData = sessionStorage.getItem("loggedInUser") || localStorage.getItem("loggedInUser");
 
-if (user) {
+if (userData) {
+
+  const user = JSON.parse(userData);  // convert JSON string to object
+
   const loginBtn = document.getElementById("loginBtn");
+
   loginBtn.outerHTML = `
     <div class="dropdown ms-2">
       <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown">
-        Welcome, ${user.split('@')[0]}
+        Welcome, ${user.name}
       </button>
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" href="account.html">Your Account</a></li>
-          <li><a class="dropdown-item" href="orders.html">Orders</a></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item text-danger" href="#" onclick="logout()">Logout</a></li>
-        </ul>
-      </div>
-    `;
-  }
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="account.html">Your Account</a></li>
+        <li><a class="dropdown-item" href="orders.html">Orders</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item text-danger" href="#" onclick="logout()">Logout</a></li>
+      </ul>
+    </div>
+  `;
+}       
 
   function logout() {
   sessionStorage.removeItem("loggedInUser");
