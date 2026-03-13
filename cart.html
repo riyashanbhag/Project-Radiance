@@ -126,22 +126,23 @@
   function checkout() {
     window.location.href = "checkout.html";
   }
-    const user = localStorage.getItem("loggedInUser") || sessionStorage.getItem("loggedInUser");
+    const userData = localStorage.getItem("loggedInUser") || sessionStorage.getItem("loggedInUser");
 
-  const accountDiv = document.getElementById("account-info");
+const accountDiv = document.getElementById("account-info");
 
-  if (user) {
-    // Extract name from email (before @)
-    const username = user.split('@')[0];
-    accountDiv.innerHTML = `
-      <span class="me-2">👤 Hi, <strong>${username}</strong></span>
-      <button class="btn btn-outline-danger btn-sm" onclick="logout()">Logout</button>
-    `;
-  } else {
-    accountDiv.innerHTML = `
-      <a href="login.html" class="btn btn-outline-success">Login/Register</a>
-    `;
-  }
+if (userData) {
+
+  const user = JSON.parse(userData); // convert JSON string to object
+
+  accountDiv.innerHTML = `
+    <span class="me-2">👤 Hi, <strong>${user.name}</strong></span>
+    <button class="btn btn-outline-danger btn-sm" onclick="logout()">Logout</button>
+  `;
+} else {
+  accountDiv.innerHTML = `
+    <a href="login.html" class="btn btn-outline-success">Login/Register</a>
+  `;
+}
 
   function logout() {
     localStorage.removeItem("loggedInUser");
