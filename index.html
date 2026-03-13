@@ -371,13 +371,13 @@
 
   const user = sessionStorage.getItem("loggedInUser") || localStorage.getItem("loggedInUser");
 
-  if (user) {
-    const loginBtn = document.getElementById("loginBtn");
-    loginBtn.outerHTML = `
-      <div class="dropdown ms-2">
-        <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown">
-          Welcome, ${user.split('@')[0]}
-        </button>
+if (user) {
+  const loginBtn = document.getElementById("loginBtn");
+  loginBtn.outerHTML = `
+    <div class="dropdown ms-2">
+      <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown">
+        Welcome, ${user.split('@')[0]}
+      </button>
         <ul class="dropdown-menu dropdown-menu-end">
           <li><a class="dropdown-item" href="account.html">Your Account</a></li>
           <li><a class="dropdown-item" href="orders.html">Orders</a></li>
