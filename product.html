@@ -114,22 +114,30 @@
     }
 
    function buyNow() {
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-    console.log("Login status:", isLoggedIn);  // Debug line
+  // Check if user is logged in
+  const user =
+    localStorage.getItem("loggedInUser") ||
+    sessionStorage.getItem("loggedInUser");
 
-    if (isLoggedIn !== "true") {
-      alert("🚫 Please log in to continue to checkout.");
-      window.location.href = "login.html";
-      return;
-    }
-
-    if (product) {
-      localStorage.setItem("buyNowProduct", JSON.stringify(product));
-      window.location.href = "checkout.html";
-    } else {
-      alert("Product not found!");
-    }
+  if (!user) {
+    alert("🚫 Please log in to continue to checkout.");
+    window.location.href = "login.html";
+    return;
   }
+
+  if (product) {
+    // Clear old cart so only this product is purchased
+    localStorage.removeItem("cart");
+
+    // Save Buy Now product
+    localStorage.setItem("buyNowProduct", JSON.stringify(product));
+
+    // Go to checkout
+    window.location.href = "checkout.html";
+  } else {
+    alert("Product not found!");
+  }
+}
 
 
   </script>
