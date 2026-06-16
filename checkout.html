@@ -133,13 +133,19 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
   // 🔒 Show modal if user not logged in
-  if (localStorage.getItem("isLoggedIn") !== "true") {
-    const modal = new bootstrap.Modal(document.getElementById("loginModal"));
-    modal.show();
-    setTimeout(() => {
-      window.location.href = "login.html";
-    }, 3000);
-  }
+  // 🔒 Show modal if user not logged in
+const user =
+  localStorage.getItem("loggedInUser") ||
+  sessionStorage.getItem("loggedInUser");
+
+if (!user) {
+  const modal = new bootstrap.Modal(document.getElementById("loginModal"));
+  modal.show();
+
+  setTimeout(() => {
+    window.location.href = "login.html";
+  }, 3000);
+}
 
   const paymentSelect = document.getElementById("paymentMethod");
   const upiDetails = document.getElementById("upiDetails");
